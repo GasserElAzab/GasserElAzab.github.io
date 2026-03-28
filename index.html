@@ -19,6 +19,7 @@
             <li><button class="nav-tab active" data-target="home">Home</button></li>
             <li><button class="nav-tab" data-target="publications">Publications</button></li>
             <li><button class="nav-tab" data-target="cv">CV</button></li>
+            <li><button class="nav-tab" data-target="education">Education</button></li>
             <li><button class="nav-tab" data-target="activities">Activities</button></li>
             <li><button class="nav-tab" data-target="memories">Memories</button></li>
         </ul>
@@ -62,8 +63,186 @@
 
 <!-- ══════════════════════  CV  ══════════════════════ -->
 <section id="cv" class="page hidden">
-    <h2 class="page-title">Curriculum Vitae</h2>
-    <p class="page-sub">Full timeline coming soon. <a href="docs/CV/My_CV.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+    <div class="page-header">
+        <h2 class="page-title">Experience</h2>
+        <a href="docs/CV/My_CV.pdf" target="_blank" rel="noopener" class="plink" style="display:inline-block;margin-top:0.5rem">Download Full CV</a>
+    </div>
+
+    <div class="timeline">
+
+        <div class="tl-item">
+            <div class="tl-marker"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">Senior Machine Learning Engineer</span>
+                        <span class="tl-org">CARIAD SE (Volkswagen Group) &mdash; Stuttgart, Germany</span>
+                    </div>
+                    <span class="tl-period">Jan 2023 &ndash; Present</span>
+                </div>
+                <ul class="tl-bullets">
+                    <li><strong>Senior ML Engineer (Feb 2026 &ndash; Present):</strong> Offline perception for lane ground-truth generation; designed a lane-color auto-labeling network and integrated the Qwen Vision-Language Model (VLM) as an automated QC stage for post-checking dataset quality.</li>
+                    <li><strong>PhD Candidate (Jan 2023 &ndash; Jan 2026):</strong>
+                        <ul>
+                            <li>Led the design and deployment of a full-scale multi-sensor data collection setup (LiDARs, cameras, IMUs, CAN/GNSS sync), recording over 5 hours of road topography data.</li>
+                            <li>Developed a novel metric-scaled self-supervised pipeline for 3D environment reconstruction using a single monocular image stream. <em>Published at WACV&nbsp;2025.</em></li>
+                            <li>Built a monocular preview system (PoC) for road topography estimation using a single forward-facing camera feed, enabling topography inference without depth sensors.</li>
+                            <li>Designed and implemented a dense ground truth generation pipeline by temporally fusing LiDAR sweeps, improving 3D reconstruction evaluation benchmarks.</li>
+                            <li>Developed a LiDAR-based odometry pipeline fused with vehicle wheel odometry to generate ground truth trajectories for autonomous driving perception stacks.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-marker"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">Master&rsquo;s Thesis Researcher</span>
+                        <span class="tl-org">Aptiv &mdash; Wuppertal, Germany</span>
+                    </div>
+                    <span class="tl-period">Feb 2022 &ndash; 2023</span>
+                </div>
+                <ul class="tl-bullets">
+                    <li>Researched efficient and robust reduction of bounding boxes from multi-class neural network output for vehicular radar systems.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-marker"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">Machine Learning Researcher <span class="tl-tag">Part-time</span></span>
+                        <span class="tl-org">Interautomation GmbH &mdash; Berlin, Germany</span>
+                    </div>
+                    <span class="tl-period">Aug 2021 &ndash; Feb 2022</span>
+                </div>
+                <ul class="tl-bullets">
+                    <li>Enhanced the accuracy of a neural APC (LSTM-based) system for automatic passenger counting in train wagons.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-marker"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">Student Worker &mdash; Computer Vision</span>
+                        <span class="tl-org">Science of Intelligence Cluster &mdash; Berlin, Germany</span>
+                    </div>
+                    <span class="tl-period">Feb 2021 &ndash; Feb 2022</span>
+                </div>
+                <ul class="tl-bullets">
+                    <li>Built a fully controlled framework for a Panda robot for capturing video data using a Phantom high-speed camera.</li>
+                    <li>Developed a Python algorithm for optimizing the alignment of Event-based camera output.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ══════════════════════  EDUCATION  ══════════════════════ -->
+<section id="education" class="page hidden">
+    <div class="page-header">
+        <h2 class="page-title">Education</h2>
+    </div>
+
+    <div class="timeline">
+
+        <div class="tl-item">
+            <div class="tl-marker tl-marker-edu"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">PhD Candidate &mdash; Computer Vision &amp; Remote Sensing</span>
+                        <span class="tl-org">Technical University of Berlin &mdash; Berlin, Germany</span>
+                    </div>
+                    <span class="tl-period">Jan 2023 &ndash; Present</span>
+                </div>
+                <ul class="tl-bullets">
+                    <li>Actively working on monocular reconstruction for road topography estimation in automotive applications.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-marker tl-marker-edu"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">M.Sc. Information and Communication Technology</span>
+                        <span class="tl-org">KTH Royal Institute of Technology &mdash; Stockholm, Sweden</span>
+                    </div>
+                    <span class="tl-period">Aug 2021 &ndash; 2023</span>
+                </div>
+                <div class="tl-grade">Grade: A</div>
+                <ul class="tl-bullets">
+                    <li>Major in Autonomous Systems; Minor in Innovation and Entrepreneurship.</li>
+                    <li>Second year of the EIT (European Institute of Technology) double-degree programme.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-marker tl-marker-edu"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">M.Sc. Information and Communication Technology</span>
+                        <span class="tl-org">Technical University of Berlin &mdash; Berlin, Germany</span>
+                    </div>
+                    <span class="tl-period">Oct 2020 &ndash; 2023</span>
+                </div>
+                <div class="tl-grade">Grade: 1.4 (Sehr Gut)</div>
+                <ul class="tl-bullets">
+                    <li>Major in Autonomous Systems; Minor in Innovation and Entrepreneurship.</li>
+                    <li>First year of the EIT double-degree programme.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-marker tl-marker-edu"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">Bachelor&rsquo;s Thesis &mdash; Optical Wave Propagation</span>
+                        <span class="tl-org">Institute of Optics, Stuttgart University &mdash; Stuttgart, Germany</span>
+                    </div>
+                    <span class="tl-period">Mar 2019 &ndash; Aug 2019</span>
+                </div>
+                <div class="tl-grade">Grade: Excellent</div>
+                <ul class="tl-bullets">
+                    <li>Exclusively developed an algorithm for optical wave propagation for WGM sensors using MATLAB, OpenCV, and Python.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-marker tl-marker-edu"></div>
+            <div class="tl-content">
+                <div class="tl-header">
+                    <div>
+                        <span class="tl-role">B.Sc. Mechatronics, Robotics and Automation</span>
+                        <span class="tl-org">German University in Cairo &mdash; Cairo, Egypt</span>
+                    </div>
+                    <span class="tl-period">Oct 2015 &ndash; Aug 2020</span>
+                </div>
+                <div class="tl-grade">GPA 0.91 / 1.0 &mdash; Excellent with Highest Honours</div>
+                <ul class="tl-bullets">
+                    <li>Ranked 6th among 290 students studying Mechatronics.</li>
+                    <li>Key courses: Computer Vision, Robotics, Autonomous Systems, Object-Oriented Programming.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 </section>
 
 <!-- ══════════════════════  ACTIVITIES  ══════════════════════ -->
@@ -93,27 +272,40 @@
 const papersData = [
     {
         id: "gfm-3dv-2026",
-        title: "GfM: Generalizable Monocular Metric Depth Estimation via Ground-Field-based Scale Prior",
+        title: "GfM: Road-Relative, Metric, Self-Supervised Monocular Geometry for Vehicular Applications",
         authors: "Gasser Elazab et al.",
         venue: "3DV 2026",
         venueFull: "International Conference on 3D Vision, 2026",
         venueClass: "venue-3dv",
-        image: "docs/gfm_p2/thumbnail.png",
+        image: "docs/paper_images/GfM.png",
         links: [
             { label: "arXiv", url: "https://arxiv.org/abs/2512.04303" },
             { label: "PDF",   url: "https://arxiv.org/pdf/2512.04303" },
             { label: "Proceedings", url: "" }
         ],
-        abstract: "Ground-relative metric depth estimation for autonomous driving using a novel ground-field-based scale prior and self-supervised learning on large-scale driving datasets."
+        abstract: "Ground-relative metric depth estimation for autonomous driving using a novel road-field-based scale prior and self-supervised learning on large-scale driving datasets."
+    },
+    {
+        id: "card-cvpr-2025",
+        title: "CARD: A Multi-Modal Automotive Dataset for Dense 3D Reconstruction in Challenging Road Topography",
+        authors: "Co-Author",
+        venue: "CVPR 2025",
+        venueFull: "IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2025",
+        venueClass: "venue-cvpr",
+        image: "docs/paper_images/CARD_image.png",
+        links: [
+            { label: "Proceedings", url: "" }
+        ],
+        abstract: "Category-aware representation for semantic scene flow estimation in autonomous driving, enabling richer motion understanding across object classes."
     },
     {
         id: "monopp-wacv-2025",
-        title: "MonoPP: Metric-Scaled Self-Supervised Monocular Depth Estimation by Planar Parallax",
+        title: "MonoPP: Metric-Scaled Self-Supervised Monocular Depth Estimation by Planar-Parallax Geometry in Automotive Applications",
         authors: "Gasser Elazab et al.",
         venue: "WACV 2025",
         venueFull: "IEEE/CVF Winter Conference on Applications of Computer Vision, 2025",
         venueClass: "venue-wacv",
-        image: "docs/monopp_p1/thumbnail.png",
+        image: "docs/paper_images/monopp.png",
         links: [
             { label: "Project Page", url: "https://mono-pp.github.io/" },
             { label: "arXiv",        url: "" },

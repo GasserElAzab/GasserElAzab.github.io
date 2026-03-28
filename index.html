@@ -11,33 +11,10 @@
 </head>
 <body>
 
-<!-- ══════════════════════  NAVBAR  ══════════════════════ -->
-<nav class="top-nav" role="navigation" aria-label="Main navigation">
-    <div class="nav-inner">
-        <span class="nav-brand">Gasser Elazab</span>
-        <ul class="nav-tabs-list">
-            <li><button class="nav-tab active" data-target="home">Home</button></li>
-            <li><button class="nav-tab" data-target="publications">Publications</button></li>
-            <li><button class="nav-tab" data-target="cv">CV</button></li>
-            <li><button class="nav-tab" data-target="activities">Activities</button></li>
-            <li><button class="nav-tab" data-target="memories">Memories</button></li>
-        </ul>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" onclick="toggleMobileMenu()">
-            <span></span><span></span><span></span>
-        </button>
-    </div>
-    <!-- Mobile dropdown -->
-    <ul class="nav-mobile-menu hidden" id="nav-mobile-menu">
-        <li><button class="nav-tab active" data-target="home">Home</button></li>
-        <li><button class="nav-tab" data-target="publications">Publications</button></li>
-        <li><button class="nav-tab" data-target="cv">CV</button></li>
-        <li><button class="nav-tab" data-target="activities">Activities</button></li>
-        <li><button class="nav-tab" data-target="memories">Memories</button></li>
-    </ul>
-</nav>
-
 <!-- ══════════════════════  HOME  ══════════════════════ -->
 <section id="home" class="page">
+
+    <!-- Profile strip -->
     <div class="profile-strip">
         <img class="profile-photo" src="docs/images/GasserElazab_image.jpg" alt="Gasser Elazab">
         <div class="profile-info">
@@ -60,124 +37,30 @@
         </div>
     </div>
 
-    <!-- Stat chips -->
-    <div class="stat-row">
-        <div class="stat-chip" onclick="switchTab('publications')">
-            <strong>4</strong><span>Publications</span>
-        </div>
-        <div class="stat-chip">
-            <strong>WACV · 3DV · CVPR</strong><span>Venues</span>
-        </div>
-        <div class="stat-chip" onclick="switchTab('activities')">
-            <strong>Reviewer</strong><span>3DV &amp; CVPR</span>
-        </div>
-        <div class="stat-chip">
-            <strong>PhD Candidate</strong><span>TU Berlin</span>
-        </div>
+    <!-- Publications -->
+    <div class="home-section">
+        <h2 class="home-section-title">Selected Publications</h2>
+        <div id="papers-container"></div>
     </div>
-</section>
 
-<!-- ══════════════════════  PUBLICATIONS  ══════════════════════ -->
-<section id="publications" class="page hidden">
-    <div class="page-header">
-        <h2 class="page-title">Publications</h2>
-        <p class="page-sub">Research in monocular depth estimation, 3D scene reconstruction, and autonomous driving perception.</p>
-    </div>
-    <div id="papers-container"></div>
-</section>
-
-<!-- ══════════════════════  CV  ══════════════════════ -->
-<section id="cv" class="page hidden">
-    <div class="page-header">
-        <h2 class="page-title">Curriculum Vitae</h2>
-        <a href="docs/CV/My_CV.pdf" target="_blank" rel="noopener" class="plink" style="margin-top:0.5rem;display:inline-block">Download PDF</a>
-    </div>
-    <div class="cv-block">
-        <h3 class="cv-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-            Experience
-        </h3>
-        <div class="timeline" id="experience-timeline"></div>
-    </div>
-    <div class="cv-block">
-        <h3 class="cv-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            Education
-        </h3>
-        <div class="timeline" id="education-timeline"></div>
-    </div>
-    <div class="cv-block">
-        <h3 class="cv-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Technical Skills
-        </h3>
-        <div class="skills-grid">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">PyTorch</span>
-            <span class="skill-tag">TensorFlow</span>
-            <span class="skill-tag">OpenCV</span>
-            <span class="skill-tag">NumPy / Pandas</span>
-            <span class="skill-tag">Scikit-learn</span>
-            <span class="skill-tag">ROS</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">MATLAB / Simulink</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">Linux</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Scala / Spark</span>
-            <span class="skill-tag">Shell</span>
-        </div>
-        <div class="lang-row" style="margin-top:1.25rem">
-            <div class="lang-pill"><strong>English</strong> Advanced (C1)</div>
-            <div class="lang-pill"><strong>German</strong> B1</div>
-            <div class="lang-pill"><strong>Arabic</strong> Native</div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════════════  ACTIVITIES  ══════════════════════ -->
-<section id="activities" class="page hidden">
-    <div class="page-header">
-        <h2 class="page-title">Activities &amp; Achievements</h2>
-    </div>
-    <div class="cv-block">
-        <h3 class="cv-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-            Awards &amp; Scholarships
-        </h3>
-        <div id="awards-container"></div>
-    </div>
-    <div class="cv-block">
-        <h3 class="cv-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Academic Reviewing
-        </h3>
-        <div id="reviewing-container"></div>
-    </div>
-    <div class="cv-block">
-        <h3 class="cv-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
-            Certificates &amp; Training
-        </h3>
-        <div id="certs-container"></div>
-    </div>
-    <div class="cv-block">
-        <h3 class="cv-section-title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            Extracurricular
-        </h3>
-        <div id="extra-container"></div>
-    </div>
 </section>
 
 <!-- ══════════════════════  MEMORIES  ══════════════════════ -->
 <section id="memories" class="page hidden">
-    <div class="page-header">
-        <h2 class="page-title">Memories</h2>
-        <p class="page-sub">Conferences, field trips, and adventures.</p>
-    </div>
     <div id="memories-container"></div>
 </section>
+
+<!-- ══════════════════════  BOTTOM TABS  ══════════════════════ -->
+<nav class="bottom-tabs" role="navigation" aria-label="Main navigation">
+    <button class="tab-btn active" data-target="home" onclick="switchTab('home')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+    </button>
+    <button class="tab-btn" data-target="memories" onclick="switchTab('memories')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Memories</span>
+    </button>
+</nav>
 
 <!-- ══════════════════════  LIGHTBOX  ══════════════════════ -->
 <div id="lightbox-overlay" class="lightbox-overlay hidden" onclick="closeLightbox()"></div>
@@ -189,47 +72,99 @@
     <div id="lightbox-caption"></div>
 </div>
 
-<!-- ══════════════════════  DATA FILES  ══════════════════════ -->
-<script src="data/publications.js"></script>
-<script src="data/cv.js"></script>
-<script src="data/memories.js"></script>
-<script src="data/activities.js"></script>
-
 <script>
-// ─── NAV ────────────────────────────────────────────────────
-function switchTab(target) {
-    document.querySelectorAll('.page').forEach(p =>
-        p.classList.toggle('hidden', p.id !== target));
-    document.querySelectorAll('.nav-tab').forEach(b =>
-        b.classList.toggle('active', b.dataset.target === target));
-    document.getElementById('nav-mobile-menu').classList.add('hidden');
-    window.scrollTo({ top: 0, behavior: 'instant' });
-}
-document.querySelectorAll('.nav-tab').forEach(btn =>
-    btn.addEventListener('click', () => switchTab(btn.dataset.target)));
+const papersData = [
+    {
+        id: "gfm-3dv-2026",
+        title: "GfM: Generalizable Monocular Metric Depth Estimation via Ground-Field-based Scale Prior",
+        authors: "Gasser Elazab et al.",
+        venue: "3DV 2026",
+        venueFull: "International Conference on 3D Vision, 2026",
+        venueClass: "venue-3dv",
+        image: "docs/gfm_p2/thumbnail.png",
+        links: [
+            { label: "arXiv", url: "https://arxiv.org/abs/2512.04303" },
+            { label: "PDF",   url: "https://arxiv.org/pdf/2512.04303" },
+            { label: "Proceedings", url: "" }
+        ],
+        abstract: "Ground-relative metric depth estimation for autonomous driving using a novel ground-field-based scale prior and self-supervised learning on large-scale driving datasets."
+    },
+    {
+        id: "monopp-wacv-2025",
+        title: "MonoPP: Metric-Scaled Self-Supervised Monocular Depth Estimation by Planar Parallax",
+        authors: "Gasser Elazab et al.",
+        venue: "WACV 2025",
+        venueFull: "IEEE/CVF Winter Conference on Applications of Computer Vision, 2025",
+        venueClass: "venue-wacv",
+        image: "docs/monopp_p1/thumbnail.png",
+        links: [
+            { label: "Project Page", url: "https://mono-pp.github.io/" },
+            { label: "arXiv",        url: "" },
+            { label: "Proceedings",  url: "" }
+        ],
+        abstract: "Metric-scaled self-supervised monocular depth estimation leveraging planar parallax geometry to recover real-world scale without LiDAR or stereo supervision."
+    },
+    // Add new papers here
+    // { id, title, authors, venue, venueFull, venueClass, image, links: [{label,url},...], abstract }
+];
 
-function toggleMobileMenu() {
-    document.getElementById('nav-mobile-menu').classList.toggle('hidden');
-}
+const memoriesData = [
+    {
+        id: "vancouver-2026",
+        title: "Vancouver, Canada",
+        subtitle: "3DV Conference · 2026",
+        folder: "docs/images/vancouver-2026",
+        images: []
+    },
+    {
+        id: "nardo-2025",
+        title: "Nardo, Italy",
+        subtitle: "Recording Trip · July 2025",
+        folder: "docs/images/nardo-2025",
+        images: []
+    },
+    {
+        id: "wacv-2025",
+        title: "Tucson, Arizona",
+        subtitle: "WACV Conference · Feb. 2025",
+        folder: "docs/images/wacv-2025",
+        images: []
+    },
+    {
+        id: "china-2024",
+        title: "China Trip",
+        subtitle: "October 2024",
+        folder: "docs/images/china-2024",
+        images: []
+    },
+    // Add new trips here (newest first)
+    // { id, title, subtitle, folder: "docs/images/<id>", images: ["1.jpg", ...] }
+];
 
-// ─── PUBLICATIONS ────────────────────────────────────────────
-function paperImgFallback(el, venue) {
-    const map = { CVPR:'#dc2626', WACV:'#ea580c', '3DV':'#2563eb', ICCV:'#16a34a', ECCV:'#9333ea' };
-    const k = Object.keys(map).find(k => venue.includes(k)) || 'OTHER';
-    const c = map[k] || '#64748b';
-    el.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(
-        `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="155"><rect fill="${c}" width="220" height="155"/><text fill="rgba(255,255,255,.9)" font-family="sans-serif" font-size="18" font-weight="700" x="110" y="84" text-anchor="middle">${k}</text></svg>`);
-    el.onerror = null;
+function paperImgFallback(imgEl, venue) {
+    const colorMap = { CVPR: '#dc2626', WACV: '#ea580c', '3DV': '#2563eb', ICCV: '#16a34a', ECCV: '#9333ea' };
+    const key   = Object.keys(colorMap).find(k => venue.includes(k)) || 'CONF';
+    const color = colorMap[key] || '#2563eb';
+    const svg   = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160">
+        <rect fill="${color}" width="220" height="160"/>
+        <text fill="rgba(255,255,255,0.9)" font-family="Inter,sans-serif" font-size="18" font-weight="700"
+              x="110" y="86" text-anchor="middle">${key}</text>
+    </svg>`;
+    imgEl.src    = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    imgEl.onerror = null;
 }
 
 function renderPapers() {
-    document.getElementById('papers-container').innerHTML = papersData.map(p => `
+    const container = document.getElementById('papers-container');
+    if (!papersData.length) return;
+    container.innerHTML = papersData.map(p => `
         <div class="paper-card">
             <div class="paper-img-wrap">
-                <img src="${p.image}" alt="${p.title}"
-                     onerror="paperImgFallback(this,'${p.venue}')" loading="lazy">
+                <img src="${p.image}"
+                     alt="${p.title}"
+                     onerror="paperImgFallback(this,'${p.venue}')"
+                     loading="lazy">
                 <span class="venue-badge ${p.venueClass}">${p.venue}</span>
-                ${p.award ? `<span class="award-badge">🏆 ${p.award}</span>` : ''}
             </div>
             <div class="paper-content">
                 <h3 class="paper-title">${p.title}</h3>
@@ -242,79 +177,11 @@ function renderPapers() {
                     ).join('')}
                 </div>
             </div>
-        </div>`).join('');
+        </div>
+    `).join('');
 }
 
-// ─── CV TIMELINE ────────────────────────────────────────────
-function renderTimeline(items, containerId, isEducation) {
-    document.getElementById(containerId).innerHTML = items.map(item => {
-        const titleLine = isEducation
-            ? `<span class="tl-role">${item.degree}</span>`
-            : `<span class="tl-role">${item.role}</span>`;
-        return `
-        <div class="tl-item">
-            <div class="tl-dot"></div>
-            <div class="tl-body">
-                <div class="tl-head">
-                    ${titleLine}
-                    <span class="tl-period">${item.period}</span>
-                </div>
-                <div class="tl-org">${item.org} &mdash; <span class="tl-loc">${item.location}</span></div>
-                ${item.grade ? `<div class="tl-grade">${item.grade}</div>` : ''}
-                <ul class="tl-bullets">
-                    ${item.bullets.map(b => `<li>${b}</li>`).join('')}
-                </ul>
-            </div>
-        </div>`}).join('');
-}
-
-// ─── ACTIVITIES ──────────────────────────────────────────────
-function renderActivities() {
-    // Awards
-    document.getElementById('awards-container').innerHTML = activitiesData.awards.map(a => `
-        <div class="activity-card">
-            <div class="activity-head">
-                <span class="activity-title">${a.title}</span>
-                <span class="activity-year">${a.year}</span>
-            </div>
-            <div class="activity-body">${a.body}</div>
-            <p class="activity-desc">${a.description}</p>
-        </div>`).join('');
-
-    // Reviewing
-    document.getElementById('reviewing-container').innerHTML = activitiesData.reviewing.map(r => `
-        <div class="activity-card review-card">
-            <span class="venue-badge ${'venue-' + r.venue.toLowerCase().replace(/[^a-z]/g,'')}">${r.venue}</span>
-            <div class="review-info">
-                <strong>${r.fullName}</strong>
-                <span class="review-years">${r.years.join(', ')}</span>
-            </div>
-        </div>`).join('');
-
-    // Certificates
-    document.getElementById('certs-container').innerHTML = activitiesData.certificates.map(c => `
-        <div class="activity-card">
-            <div class="activity-head">
-                <span class="activity-title">${c.title}</span>
-                <span class="activity-year">${c.year}</span>
-            </div>
-            <div class="activity-body">${c.issuer}</div>
-            <p class="activity-desc">${c.description}</p>
-        </div>`).join('');
-
-    // Extracurricular
-    document.getElementById('extra-container').innerHTML = activitiesData.extracurricular.map(e => `
-        <div class="activity-card">
-            <div class="activity-head">
-                <span class="activity-title">${e.role}</span>
-                <span class="activity-year">${e.period}</span>
-            </div>
-            <div class="activity-body">${e.org} &mdash; ${e.location}</div>
-            <p class="activity-desc">${e.description}</p>
-        </div>`).join('');
-}
-
-// ─── MEMORIES ───────────────────────────────────────────────
+// Gradient palettes for empty trip placeholders
 const tripGradients = [
     'linear-gradient(135deg,#667eea,#764ba2)',
     'linear-gradient(135deg,#f7971e,#ffd200)',
@@ -325,26 +192,28 @@ const tripGradients = [
 ];
 
 function renderMemories() {
-    document.getElementById('memories-container').innerHTML = memoriesData.map((m, mi) => {
-        const total   = m.images.length;
-        const preview = m.images.slice(0, 3);
-        const hasMore = total > 3;
-        const grad    = tripGradients[mi % tripGradients.length];
+    const container = document.getElementById('memories-container');
+    if (!memoriesData.length) return;
+    container.innerHTML = memoriesData.map((m, mi) => {
+        const total    = m.images.length;
+        const preview  = m.images.slice(0, 3);
+        const hasMore  = total > 3;
+        const grad     = tripGradients[mi % tripGradients.length];
 
         const coverHtml = total > 0
-            ? `<img class="trip-cover-img" src="${m.folder}/${m.images[0]}" alt="${m.title}" loading="lazy"
-                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            ? `<img class="trip-cover-img" src="${m.folder}/${m.images[0]}" alt="${m.title}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
                <div class="trip-cover-placeholder" style="background:${grad};display:none"></div>`
             : `<div class="trip-cover-placeholder" style="background:${grad}"></div>`;
 
-        const strip = total > 0 ? `
+        const previewStrip = total > 0 ? `
             <div class="trip-preview-strip">
                 ${preview.map((img, i) => `
                     <img src="${m.folder}/${img}" alt="${m.title} ${i+1}"
                          class="strip-thumb" loading="lazy"
                          onclick="openMemoryLightbox('${m.id}',${i})">`).join('')}
                 ${hasMore ? `<button class="strip-more-btn" onclick="toggleTripGallery('${m.id}')">
-                    +${total - 3}<br><span>more</span></button>` : ''}
+                    +${total - 3}<br><span>more</span>
+                </button>` : ''}
             </div>` : '';
 
         const fullGrid = hasMore ? `
@@ -353,11 +222,11 @@ function renderMemories() {
                     <img src="${m.folder}/${img}" alt="${m.title} ${i+4}"
                          class="grid-thumb" loading="lazy"
                          onclick="openMemoryLightbox('${m.id}',${i+3})">`).join('')}
-                <button class="collapse-btn" onclick="toggleTripGallery('${m.id}')">Show less ▲</button>
+                <button class="collapse-btn" onclick="toggleTripGallery('${m.id}')">Show less</button>
             </div>` : '';
 
         return `
-        <div class="trip-card">
+        <div class="trip-card" id="trip-${m.id}">
             <div class="trip-cover">
                 ${coverHtml}
                 <div class="trip-cover-overlay">
@@ -368,40 +237,49 @@ function renderMemories() {
                     ${total > 0 ? `<span class="trip-photo-count">${total} photos</span>` : ''}
                 </div>
             </div>
-            ${strip}${fullGrid}
+            ${previewStrip}
+            ${fullGrid}
         </div>`;
     }).join('');
 }
 
 function toggleTripGallery(id) {
-    document.getElementById(`grid-${id}`).classList.toggle('hidden');
+    const grid = document.getElementById(`grid-${id}`);
+    grid.classList.toggle('hidden');
 }
 
-// ─── LIGHTBOX ───────────────────────────────────────────────
+// ════════════════════════════════════════════════════════════
+//  LIGHTBOX
+// ════════════════════════════════════════════════════════════
 let _lb = { images: [], idx: 0, folder: '', title: '' };
 
 function openMemoryLightbox(tripId, idx) {
     const m = memoriesData.find(x => x.id === tripId);
-    _lb = { images: m.images, idx, folder: m.folder, title: m.title };
+    _lb     = { images: m.images, idx, folder: m.folder, title: m.title };
     _updateLightbox();
     document.getElementById('lightbox').classList.remove('hidden');
     document.getElementById('lightbox-overlay').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
+
 function _updateLightbox() {
-    document.getElementById('lightbox-img').src = `${_lb.folder}/${_lb.images[_lb.idx]}`;
+    document.getElementById('lightbox-img').src =
+        `${_lb.folder}/${_lb.images[_lb.idx]}`;
     document.getElementById('lightbox-caption').textContent =
         `${_lb.title}  ·  ${_lb.idx + 1} / ${_lb.images.length}`;
 }
+
 function lightboxNav(dir) {
     _lb.idx = (_lb.idx + dir + _lb.images.length) % _lb.images.length;
     _updateLightbox();
 }
+
 function closeLightbox() {
     document.getElementById('lightbox').classList.add('hidden');
     document.getElementById('lightbox-overlay').classList.add('hidden');
     document.body.style.overflow = '';
 }
+
 document.addEventListener('keydown', e => {
     if (document.getElementById('lightbox').classList.contains('hidden')) return;
     if (e.key === 'ArrowLeft')  lightboxNav(-1);
@@ -409,11 +287,18 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape')     closeLightbox();
 });
 
-// ─── INIT ───────────────────────────────────────────────────
+function switchTab(target) {
+    document.querySelectorAll('.page').forEach(p =>
+        p.classList.toggle('hidden', p.id !== target));
+    document.querySelectorAll('.tab-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.target === target));
+    window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+// ════════════════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════════════════
 renderPapers();
-renderTimeline(cvData.experience, 'experience-timeline', false);
-renderTimeline(cvData.education,  'education-timeline',  true);
-renderActivities();
 renderMemories();
 </script>
 </body>

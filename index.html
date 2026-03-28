@@ -3,123 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gasser Elazab | ML Engineer &amp; PhD Candidate</title>
+    <title>Gasser Elazab</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- ══════════════════════  NAVBAR  ══════════════════════ -->
-<nav class="navbar">
-    <span class="nav-brand">Gasser Elazab</span>
-    <ul class="nav-links">
-        <li><a href="#" class="nav-tab active" data-target="home">Home</a></li>
-        <li><a href="#" class="nav-tab" data-target="publications">Publications</a></li>
-        <li><a href="#" class="nav-tab" data-target="memories">Memories</a></li>
-    </ul>
-</nav>
 
 <!-- ══════════════════════  HOME  ══════════════════════ -->
 <section id="home" class="page">
 
-    <!-- Hero card -->
-    <div class="hero card">
-        <div class="hero-photo">
-            <img src="docs/images/GasserElazab_image.jpg" alt="Gasser Elazab">
-        </div>
-        <div class="hero-content">
-            <h1>Gasser Elazab</h1>
-            <p class="hero-title">Senior ML Engineer · PhD Candidate</p>
-            <div class="tags">
-                <span class="tag">Autonomous Driving</span>
-                <span class="tag">Computer Vision</span>
-                <span class="tag">3D Scene Understanding</span>
-                <span class="tag">Self-Supervised Learning</span>
-            </div>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/gasserelazab/" target="_blank" rel="noopener" class="btn">LinkedIn</a>
-                <a href="https://github.com/GasserElAzab" target="_blank" rel="noopener" class="btn">GitHub</a>
-                <!-- TODO: replace with your actual Google Scholar profile URL -->
-                <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="btn">Scholar</a>
-                <a href="docs/CV/My_CV.pdf" target="_blank" rel="noopener" class="btn btn-outline">CV</a>
-                <a href="mailto:gasser.elazab@gmail.com" class="btn btn-outline">Email</a>
+    <!-- Profile strip -->
+    <div class="profile-strip">
+        <img class="profile-photo" src="docs/images/GasserElazab_image.jpg" alt="Gasser Elazab">
+        <div class="profile-info">
+            <h1 class="profile-name">Gasser Elazab</h1>
+            <p class="profile-role">Senior ML Engineer at CARIAD SE &nbsp;·&nbsp; PhD Candidate, TU Berlin</p>
+            <p class="profile-bio">
+                I work in the World Models &amp; Semantics team at CARIAD SE (Volkswagen Group),
+                developing models and pipelines for ground truth generation in autonomous driving.
+                My PhD research at TU Berlin's Computer Vision &amp; Remote Sensing Lab focuses on
+                self-supervised monocular depth estimation and metric-scale 3D perception.
+                I have published at WACV, 3DV, and CVPR, and served as a reviewer for 3DV and CVPR.
+            </p>
+            <div class="profile-links">
+                <a href="https://linkedin.com/in/gasserelazab/" target="_blank" rel="noopener" class="plink">LinkedIn</a>
+                <a href="https://github.com/GasserElAzab" target="_blank" rel="noopener" class="plink">GitHub</a>
+                <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="plink">Scholar</a>
+                <a href="docs/CV/My_CV.pdf" target="_blank" rel="noopener" class="plink plink-outline">CV</a>
+                <a href="mailto:gasser.elazab@gmail.com" class="plink plink-outline">Email</a>
             </div>
         </div>
     </div>
 
-    <!-- About Me -->
-    <div class="bio-section card">
-        <h2 class="section-heading">About Me</h2>
-        <p>
-            I am a <strong>Senior Machine Learning Engineer</strong> at <strong>CARIAD SE</strong>
-            (Volkswagen Group), working within the <strong>World Models &amp; Semantics</strong> team.
-            My current focus is on developing models and pipelines for
-            <strong>ground truth generation</strong> needed for various functions in the autonomous
-            driving stack.
-        </p>
-        <p>
-            Simultaneously, I am pursuing my <strong>PhD</strong> at the
-            <a href="https://www.tu.berlin/" target="_blank" rel="noopener">Technical University of Berlin</a>
-            in the <strong>Computer Vision &amp; Remote Sensing Lab</strong>. My research sits at the
-            intersection of <strong>self-supervised monocular depth estimation</strong>,
-            <strong>3D scene reconstruction</strong>, and <strong>metric-scale geometry</strong>
-            for vehicular perception.
-        </p>
-        <p>
-            I have published at <strong>WACV</strong>, <strong>3DV</strong>, and <strong>CVPR</strong>
-            and have served as a reviewer for <strong>3DV</strong> and <strong>CVPR</strong>.
-        </p>
+    <!-- Publications -->
+    <div class="home-section">
+        <h2 class="home-section-title">Selected Publications</h2>
+        <div id="papers-container"></div>
     </div>
 
-    <!-- Quick-stats highlights -->
-    <div class="highlights-grid">
-        <div class="highlight-card" onclick="switchTab('publications')" title="View Publications">
-            <div class="highlight-icon">📄</div>
-            <div>
-                <strong>4 Publications</strong>
-                <p>WACV · 3DV · CVPR</p>
-            </div>
-        </div>
-        <div class="highlight-card">
-            <div class="highlight-icon">🏛️</div>
-            <div>
-                <strong>PhD Candidate</strong>
-                <p>TU Berlin · CV &amp; RS Lab</p>
-            </div>
-        </div>
-        <div class="highlight-card">
-            <div class="highlight-icon">🚗</div>
-            <div>
-                <strong>CARIAD SE</strong>
-                <p>World Models &amp; Semantics</p>
-            </div>
-        </div>
-        <div class="highlight-card">
-            <div class="highlight-icon">🔍</div>
-            <div>
-                <strong>Reviewer</strong>
-                <p>3DV · CVPR</p>
-            </div>
-        </div>
-    </div>
-
-</section>
-
-<!-- ══════════════════════  PUBLICATIONS  ══════════════════════ -->
-<section id="publications" class="page hidden">
-    <h2 class="section-title">Selected Publications</h2>
-    <p class="section-subtitle">Research in monocular depth, 3D reconstruction, and autonomous perception.</p>
-    <div id="papers-container"></div>
 </section>
 
 <!-- ══════════════════════  MEMORIES  ══════════════════════ -->
 <section id="memories" class="page hidden">
-    <h2 class="section-title">Personal Memories</h2>
-    <p class="section-subtitle">Moments from conferences, field trips, and adventures — newest first.</p>
     <div id="memories-container"></div>
 </section>
+
+<!-- ══════════════════════  BOTTOM TABS  ══════════════════════ -->
+<nav class="bottom-tabs" role="navigation" aria-label="Main navigation">
+    <button class="tab-btn active" data-target="home" onclick="switchTab('home')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+    </button>
+    <button class="tab-btn" data-target="memories" onclick="switchTab('memories')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        <span>Memories</span>
+    </button>
+</nav>
 
 <!-- ══════════════════════  LIGHTBOX  ══════════════════════ -->
 <div id="lightbox-overlay" class="lightbox-overlay hidden" onclick="closeLightbox()"></div>
@@ -132,13 +73,6 @@
 </div>
 
 <script>
-// ════════════════════════════════════════════════════════════
-//  PUBLICATIONS DATA
-//  ─ Add new papers by pushing a new object into this array.
-//  ─ Place a thumbnail image at the path set in `image`.
-//  ─ Supported venueClass values:
-//      venue-cvpr | venue-wacv | venue-3dv | venue-iccv | venue-eccv
-// ════════════════════════════════════════════════════════════
 const papersData = [
     {
         id: "gfm-3dv-2026",
@@ -149,9 +83,9 @@ const papersData = [
         venueClass: "venue-3dv",
         image: "docs/gfm_p2/thumbnail.png",
         links: [
-            { label: "arXiv",        url: "https://arxiv.org/abs/2512.04303", icon: "📄" },
-            { label: "PDF",          url: "https://arxiv.org/pdf/2512.04303", icon: "📑" },
-            { label: "Proceedings",  url: "",                                  icon: "🔗" }  // Fill in when available
+            { label: "arXiv", url: "https://arxiv.org/abs/2512.04303" },
+            { label: "PDF",   url: "https://arxiv.org/pdf/2512.04303" },
+            { label: "Proceedings", url: "" }
         ],
         abstract: "Ground-relative metric depth estimation for autonomous driving using a novel ground-field-based scale prior and self-supervised learning on large-scale driving datasets."
     },
@@ -164,48 +98,23 @@ const papersData = [
         venueClass: "venue-wacv",
         image: "docs/monopp_p1/thumbnail.png",
         links: [
-            { label: "Project Page", url: "https://mono-pp.github.io/", icon: "🌐" },
-            { label: "arXiv",        url: "",                            icon: "📄" },  // Fill in
-            { label: "Proceedings",  url: "",                            icon: "🔗" }   // Fill in
+            { label: "Project Page", url: "https://mono-pp.github.io/" },
+            { label: "arXiv",        url: "" },
+            { label: "Proceedings",  url: "" }
         ],
         abstract: "Metric-scaled self-supervised monocular depth estimation leveraging planar parallax geometry to recover real-world scale without LiDAR or stereo supervision."
     },
-
-    // ── ADD NEW PAPERS BELOW (copy this block and fill in) ──────────────
-    // {
-    //     id: "paper-id",
-    //     title: "Full Paper Title",
-    //     authors: "Author 1, Author 2, ...",
-    //     venue: "CVPR 2025",
-    //     venueFull: "IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2025",
-    //     venueClass: "venue-cvpr",
-    //     image: "docs/<your-folder>/thumbnail.png",
-    //     links: [
-    //         { label: "arXiv",        url: "https://arxiv.org/abs/XXXX.XXXXX", icon: "📄" },
-    //         { label: "Project Page", url: "https://your-page.github.io",      icon: "🌐" },
-    //         { label: "Code",         url: "https://github.com/...",            icon: "💻" },
-    //         { label: "Proceedings",  url: "https://openaccess.thecvf.com/...",icon: "🔗" },
-    //     ],
-    //     abstract: "One-to-two sentence description of the paper."
-    // },
+    // Add new papers here
+    // { id, title, authors, venue, venueFull, venueClass, image, links: [{label,url},...], abstract }
 ];
 
-// ════════════════════════════════════════════════════════════
-//  MEMORIES DATA  (keep newest → oldest)
-//  ─ Images live at:  docs/images/<id>/<filename>
-//  ─ Add filenames to the `images` array as you upload them.
-//  ─ Supported image formats: .jpg, .jpeg, .png, .webp
-// ════════════════════════════════════════════════════════════
 const memoriesData = [
     {
         id: "vancouver-2026",
         title: "Vancouver, Canada",
         subtitle: "3DV Conference · 2026",
         folder: "docs/images/vancouver-2026",
-        images: [
-            // Add filenames as you upload photos to docs/images/vancouver-2026/
-            // Example: "1.jpg", "2.jpg", "3.jpg"
-        ]
+        images: []
     },
     {
         id: "nardo-2025",
@@ -228,30 +137,18 @@ const memoriesData = [
         folder: "docs/images/china-2024",
         images: []
     },
-
-    // ── ADD NEW TRIPS HERE (newest at the top of the list) ──────────────
-    // {
-    //     id: "trip-id",                          // also used as folder name suffix
-    //     title: "City, Country",
-    //     subtitle: "Event · Month YYYY",
-    //     folder: "docs/images/trip-id",          // place photos here
-    //     images: ["1.jpg", "2.jpg", "3.jpg"]     // list filenames here
-    // },
+    // Add new trips here (newest first)
+    // { id, title, subtitle, folder: "docs/images/<id>", images: ["1.jpg", ...] }
 ];
 
-// ════════════════════════════════════════════════════════════
-//  RENDERING — Publications
-// ════════════════════════════════════════════════════════════
 function paperImgFallback(imgEl, venue) {
     const colorMap = { CVPR: '#dc2626', WACV: '#ea580c', '3DV': '#2563eb', ICCV: '#16a34a', ECCV: '#9333ea' };
     const key   = Object.keys(colorMap).find(k => venue.includes(k)) || 'CONF';
     const color = colorMap[key] || '#2563eb';
-    const svg   = `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="200">
-        <rect fill="${color}" width="240" height="200"/>
-        <text fill="rgba(255,255,255,0.95)" font-family="Inter,sans-serif" font-size="20" font-weight="700"
-              x="120" y="88" text-anchor="middle">${key}</text>
-        <text fill="rgba(255,255,255,0.6)" font-family="Inter,sans-serif" font-size="11"
-              x="120" y="112" text-anchor="middle">thumbnail not yet added</text>
+    const svg   = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160">
+        <rect fill="${color}" width="220" height="160"/>
+        <text fill="rgba(255,255,255,0.9)" font-family="Inter,sans-serif" font-size="18" font-weight="700"
+              x="110" y="86" text-anchor="middle">${key}</text>
     </svg>`;
     imgEl.src    = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
     imgEl.onerror = null;
@@ -259,15 +156,12 @@ function paperImgFallback(imgEl, venue) {
 
 function renderPapers() {
     const container = document.getElementById('papers-container');
-    if (!papersData.length) {
-        container.innerHTML = '<p class="empty-note">No publications listed yet.</p>';
-        return;
-    }
+    if (!papersData.length) return;
     container.innerHTML = papersData.map(p => `
-        <div class="paper-card" id="paper-${p.id}">
+        <div class="paper-card">
             <div class="paper-img-wrap">
                 <img src="${p.image}"
-                     alt="Thumbnail – ${p.title}"
+                     alt="${p.title}"
                      onerror="paperImgFallback(this,'${p.venue}')"
                      loading="lazy">
                 <span class="venue-badge ${p.venueClass}">${p.venue}</span>
@@ -275,11 +169,11 @@ function renderPapers() {
             <div class="paper-content">
                 <h3 class="paper-title">${p.title}</h3>
                 <p class="paper-authors">${p.authors}</p>
-                <p class="paper-venue-full"><em>${p.venueFull}</em></p>
+                <p class="paper-venue-full">${p.venueFull}</p>
                 <p class="paper-abstract">${p.abstract}</p>
                 <div class="paper-links">
                     ${p.links.filter(l => l.url).map(l =>
-                        `<a href="${l.url}" target="_blank" rel="noopener" class="pill-link">${l.icon} ${l.label}</a>`
+                        `<a href="${l.url}" target="_blank" rel="noopener" class="pill-link">${l.label}</a>`
                     ).join('')}
                 </div>
             </div>
@@ -287,69 +181,71 @@ function renderPapers() {
     `).join('');
 }
 
-// ════════════════════════════════════════════════════════════
-//  RENDERING — Memories
-// ════════════════════════════════════════════════════════════
+// Gradient palettes for empty trip placeholders
+const tripGradients = [
+    'linear-gradient(135deg,#667eea,#764ba2)',
+    'linear-gradient(135deg,#f7971e,#ffd200)',
+    'linear-gradient(135deg,#11998e,#38ef7d)',
+    'linear-gradient(135deg,#ee0979,#ff6a00)',
+    'linear-gradient(135deg,#4568dc,#b06ab3)',
+    'linear-gradient(135deg,#134e5e,#71b280)',
+];
+
 function renderMemories() {
     const container = document.getElementById('memories-container');
-    if (!memoriesData.length) {
-        container.innerHTML = '<p class="empty-note">No memories listed yet.</p>';
-        return;
-    }
-    container.innerHTML = memoriesData.map(m => {
-        const preview  = m.images.slice(0, 4);
-        const hasExtra = m.images.length > 4;
-        const isEmpty  = m.images.length === 0;
-        const thumbHtml = (imgs, offset) => imgs.map((img, i) =>
-            `<img src="${m.folder}/${img}"
-                  alt="${m.title} – photo ${offset + i + 1}"
-                  class="album-thumb"
-                  onclick="openMemoryLightbox('${m.id}', ${offset + i})"
-                  loading="lazy">`
-        ).join('');
+    if (!memoriesData.length) return;
+    container.innerHTML = memoriesData.map((m, mi) => {
+        const total    = m.images.length;
+        const preview  = m.images.slice(0, 3);
+        const hasMore  = total > 3;
+        const grad     = tripGradients[mi % tripGradients.length];
+
+        const coverHtml = total > 0
+            ? `<img class="trip-cover-img" src="${m.folder}/${m.images[0]}" alt="${m.title}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+               <div class="trip-cover-placeholder" style="background:${grad};display:none"></div>`
+            : `<div class="trip-cover-placeholder" style="background:${grad}"></div>`;
+
+        const previewStrip = total > 0 ? `
+            <div class="trip-preview-strip">
+                ${preview.map((img, i) => `
+                    <img src="${m.folder}/${img}" alt="${m.title} ${i+1}"
+                         class="strip-thumb" loading="lazy"
+                         onclick="openMemoryLightbox('${m.id}',${i})">`).join('')}
+                ${hasMore ? `<button class="strip-more-btn" onclick="toggleTripGallery('${m.id}')">
+                    +${total - 3}<br><span>more</span>
+                </button>` : ''}
+            </div>` : '';
+
+        const fullGrid = hasMore ? `
+            <div class="trip-full-grid hidden" id="grid-${m.id}">
+                ${m.images.slice(3).map((img, i) => `
+                    <img src="${m.folder}/${img}" alt="${m.title} ${i+4}"
+                         class="grid-thumb" loading="lazy"
+                         onclick="openMemoryLightbox('${m.id}',${i+3})">`).join('')}
+                <button class="collapse-btn" onclick="toggleTripGallery('${m.id}')">Show less</button>
+            </div>` : '';
 
         return `
-        <div class="memory-card" id="memory-${m.id}">
-            <div class="memory-header" onclick="toggleMemory('${m.id}')">
-                <div>
-                    <h3 class="memory-title">${m.title}</h3>
-                    <p class="memory-subtitle">${m.subtitle}</p>
-                </div>
-                <div class="memory-meta">
-                    <span class="photo-count">${isEmpty ? 'coming soon' : m.images.length + ' photos'}</span>
-                    <span class="expand-icon" id="icon-${m.id}">▼</span>
-                </div>
-            </div>
-            <div class="album-body album-collapsed" id="album-${m.id}">
-                ${isEmpty
-                    ? `<p class="album-empty">📷 Photos coming soon — add images to <code>${m.folder}/</code> and list them in memoriesData.</p>`
-                    : `<div class="album-grid preview-grid">${thumbHtml(preview, 0)}</div>`
-                }
-                ${hasExtra ? `
-                    <div id="extra-${m.id}" class="extra-photos hidden">
-                        <div class="album-grid full-grid">${thumbHtml(m.images.slice(4), 4)}</div>
+        <div class="trip-card" id="trip-${m.id}">
+            <div class="trip-cover">
+                ${coverHtml}
+                <div class="trip-cover-overlay">
+                    <div class="trip-cover-text">
+                        <span class="trip-subtitle">${m.subtitle}</span>
+                        <h2 class="trip-title">${m.title}</h2>
                     </div>
-                    <button class="see-all-btn" id="seeall-${m.id}"
-                            onclick="event.stopPropagation(); toggleExtra('${m.id}', ${m.images.length})">
-                        See all ${m.images.length} photos ▼
-                    </button>` : ''}
+                    ${total > 0 ? `<span class="trip-photo-count">${total} photos</span>` : ''}
+                </div>
             </div>
+            ${previewStrip}
+            ${fullGrid}
         </div>`;
     }).join('');
 }
 
-function toggleMemory(id) {
-    const body          = document.getElementById(`album-${id}`);
-    const icon          = document.getElementById(`icon-${id}`);
-    const isNowCollapsed = body.classList.toggle('album-collapsed');
-    icon.style.transform = isNowCollapsed ? '' : 'rotate(180deg)';
-}
-
-function toggleExtra(id, total) {
-    const extra     = document.getElementById(`extra-${id}`);
-    const btn       = document.getElementById(`seeall-${id}`);
-    const isHidden  = extra.classList.toggle('hidden');
-    btn.textContent = isHidden ? `See all ${total} photos ▼` : 'Show less ▲';
+function toggleTripGallery(id) {
+    const grid = document.getElementById(`grid-${id}`);
+    grid.classList.toggle('hidden');
 }
 
 // ════════════════════════════════════════════════════════════
@@ -391,22 +287,13 @@ document.addEventListener('keydown', e => {
     if (e.key === 'Escape')     closeLightbox();
 });
 
-// ════════════════════════════════════════════════════════════
-//  TAB NAVIGATION
-// ════════════════════════════════════════════════════════════
 function switchTab(target) {
-    document.querySelectorAll('.page').forEach(p => {
-        p.classList.toggle('hidden', p.id !== target);
-    });
-    document.querySelectorAll('.nav-tab').forEach(t => {
-        t.classList.toggle('active', t.dataset.target === target);
-    });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.querySelectorAll('.page').forEach(p =>
+        p.classList.toggle('hidden', p.id !== target));
+    document.querySelectorAll('.tab-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.target === target));
+    window.scrollTo({ top: 0, behavior: 'instant' });
 }
-
-document.querySelectorAll('.nav-tab').forEach(tab =>
-    tab.addEventListener('click', e => { e.preventDefault(); switchTab(tab.dataset.target); })
-);
 
 // ════════════════════════════════════════════════════════════
 //  INIT

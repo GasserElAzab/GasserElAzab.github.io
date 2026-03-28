@@ -13,7 +13,7 @@
     --shadow-md:    0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
     --radius:       16px;
     --radius-sm:    8px;
-    --tab-h:        66px;
+    --nav-h:        58px;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -27,7 +27,6 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.65;
-    padding-bottom: calc(var(--tab-h) + 8px);
     min-height: 100vh;
 }
 
@@ -42,46 +41,66 @@ a:hover { text-decoration: underline; }
 .page.hidden { display: none; }
 
 /* ═══════════════════════════════════════════════════════════════
-   BOTTOM TAB BAR
+   TOP NAV
 ═══════════════════════════════════════════════════════════════ */
-.bottom-tabs {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    height: var(--tab-h);
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid var(--border);
-    display: flex;
-    z-index: 100;
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
 }
 
-.tab-btn {
-    flex: 1;
+.nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    height: var(--nav-h);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 4px;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    gap: 1rem;
+}
+
+.nav-brand {
+    font-weight: 800;
+    font-size: 0.97rem;
+    color: var(--text);
+    letter-spacing: -0.2px;
+    flex-shrink: 0;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+}
+
+.nav-tab {
     background: none;
     border: none;
     cursor: pointer;
-    color: var(--text-muted);
     font-family: inherit;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    transition: color 0.18s;
-    padding-bottom: 4px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 0.38rem 0.9rem;
+    border-radius: 99px;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
 }
-.tab-btn svg {
-    width: 22px;
-    height: 22px;
-    stroke: currentColor;
-    transition: stroke 0.18s;
-}
-.tab-btn.active         { color: var(--primary); }
-.tab-btn:hover          { color: var(--text); }
+.nav-tab:hover  { background: var(--bg); color: var(--text); }
+.nav-tab.active { background: var(--primary); color: #fff; font-weight: 600; }
+
+/* ═══════════════════════════════════════════════════════════════
+   PAGE TITLE
+═══════════════════════════════════════════════════════════════ */
+.page-title { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.4px; margin-bottom: 0.3rem; }
+.page-sub   { color: var(--text-muted); font-size: 0.9rem; }
 
 /* ═══════════════════════════════════════════════════════════════
    PROFILE STRIP

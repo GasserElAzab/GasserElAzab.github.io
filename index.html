@@ -2,53 +2,417 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gasser Elazab | ML Engineer &amp; PhD Candidate</title>
     <link rel="stylesheet" href="style.css">
-    <title>Gasser Elazab | Senior ML Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Gasser Elazab</h1>
-        <p>Senior Machine Learning Engineer @ CARIAD SE (Volkswagen Group)</p>
-        <div class="links">
-            <a href="https://linkedin.com/in/gasserelazab/">LinkedIn</a> | 
-            <a href="https://github.com/GasserElAzab">GitHub</a> |
-            <a href="mailto:gasser.elazab@gmail.com">Email</a>
+
+<!-- ══════════════════════  NAVBAR  ══════════════════════ -->
+<nav class="navbar">
+    <span class="nav-brand">Gasser Elazab</span>
+    <ul class="nav-links">
+        <li><a href="#" class="nav-tab active" data-target="home">Home</a></li>
+        <li><a href="#" class="nav-tab" data-target="publications">Publications</a></li>
+        <li><a href="#" class="nav-tab" data-target="memories">Memories</a></li>
+    </ul>
+</nav>
+
+<!-- ══════════════════════  HOME  ══════════════════════ -->
+<section id="home" class="page">
+
+    <!-- Hero card -->
+    <div class="hero card">
+        <div class="hero-photo">
+            <img src="docs/images/GasserElazab_image.jpg" alt="Gasser Elazab">
         </div>
-    </header>
-
-    <section id="bio">
-        <h2>About Me</h2>
-        <p>I am a Senior ML Engineer and PhD Candidate [cite: 7, 11] specializing in 3D environment reconstruction and offline perception[cite: 9, 13]. Currently, I lead efforts in lane-color auto-labeling and VLM-based quality control for autonomous driving datasets[cite: 10].</p>
-    </section>
-
-    <section id="publications">
-        <h2>Selected Publications</h2>
-        
-        <div class="paper">
-            <img src="assets/3dv2026.png" alt="3DV 2026">
-            <div class="paper-info">
-                <h3>GfM: Road-Relative, Metric, Self-Supervised Monocular Geometry for Vehicular Applications [cite: 65]</h3>
-                <p><em>3DV 2026</em></p>
-                <a href="YOUR_GOOGLE_SCHOLAR_LINK">Google Scholar</a>
+        <div class="hero-content">
+            <h1>Gasser Elazab</h1>
+            <p class="hero-title">Senior ML Engineer · PhD Candidate</p>
+            <div class="tags">
+                <span class="tag">Autonomous Driving</span>
+                <span class="tag">Computer Vision</span>
+                <span class="tag">3D Scene Understanding</span>
+                <span class="tag">Self-Supervised Learning</span>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/gasserelazab/" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+                <a href="https://github.com/GasserElAzab" target="_blank" rel="noopener" class="btn">GitHub</a>
+                <!-- TODO: replace with your actual Google Scholar profile URL -->
+                <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="btn">Scholar</a>
+                <a href="docs/CV/My_CV.pdf" target="_blank" rel="noopener" class="btn btn-outline">CV</a>
+                <a href="mailto:gasser.elazab@gmail.com" class="btn btn-outline">Email</a>
             </div>
         </div>
+    </div>
 
-        <div class="paper">
-            <img src="assets/wacv2025.png" alt="WACV 2025">
-            <div class="paper-info">
-                <h3>MonoPP: Metric-Scaled Self-Supervised Monocular Depth Estimation [cite: 68]</h3>
-                <p><em>WACV 2025</em></p>
-                <a href="https://mono-pp.github.io/">Project Page</a>
+    <!-- About Me -->
+    <div class="bio-section card">
+        <h2 class="section-heading">About Me</h2>
+        <p>
+            I am a <strong>Senior Machine Learning Engineer</strong> at <strong>CARIAD SE</strong>
+            (Volkswagen Group), working within the <strong>World Models &amp; Semantics</strong> team.
+            My current focus is on developing models and pipelines for
+            <strong>ground truth generation</strong> needed for various functions in the autonomous
+            driving stack.
+        </p>
+        <p>
+            Simultaneously, I am pursuing my <strong>PhD</strong> at the
+            <a href="https://www.tu.berlin/" target="_blank" rel="noopener">Technical University of Berlin</a>
+            in the <strong>Computer Vision &amp; Remote Sensing Lab</strong>. My research sits at the
+            intersection of <strong>self-supervised monocular depth estimation</strong>,
+            <strong>3D scene reconstruction</strong>, and <strong>metric-scale geometry</strong>
+            for vehicular perception.
+        </p>
+        <p>
+            I have published at <strong>WACV</strong>, <strong>3DV</strong>, and <strong>CVPR</strong>
+            and have served as a reviewer for <strong>3DV</strong> and <strong>CVPR</strong>.
+        </p>
+    </div>
+
+    <!-- Quick-stats highlights -->
+    <div class="highlights-grid">
+        <div class="highlight-card" onclick="switchTab('publications')" title="View Publications">
+            <div class="highlight-icon">📄</div>
+            <div>
+                <strong>4 Publications</strong>
+                <p>WACV · 3DV · CVPR</p>
             </div>
         </div>
-    </section>
+        <div class="highlight-card">
+            <div class="highlight-icon">🏛️</div>
+            <div>
+                <strong>PhD Candidate</strong>
+                <p>TU Berlin · CV &amp; RS Lab</p>
+            </div>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon">🚗</div>
+            <div>
+                <strong>CARIAD SE</strong>
+                <p>World Models &amp; Semantics</p>
+            </div>
+        </div>
+        <div class="highlight-card">
+            <div class="highlight-icon">🔍</div>
+            <div>
+                <strong>Reviewer</strong>
+                <p>3DV · CVPR</p>
+            </div>
+        </div>
+    </div>
 
-    <section id="education-docs">
-        <h2>Academic Records</h2>
-        <ul>
-            <li><a href="assets/MSc_TU_Berlin.pdf">M.Sc. Information and Communication Tech - TU Berlin (Grade 1.4) [cite: 43, 44]</a></li>
-            <li><a href="assets/MSc_KTH.pdf">M.Sc. Autonomous Systems - KTH Royal Institute (Grade A) [cite: 39, 40]</a></li>
-        </ul>
-    </section>
+</section>
+
+<!-- ══════════════════════  PUBLICATIONS  ══════════════════════ -->
+<section id="publications" class="page hidden">
+    <h2 class="section-title">Selected Publications</h2>
+    <p class="section-subtitle">Research in monocular depth, 3D reconstruction, and autonomous perception.</p>
+    <div id="papers-container"></div>
+</section>
+
+<!-- ══════════════════════  MEMORIES  ══════════════════════ -->
+<section id="memories" class="page hidden">
+    <h2 class="section-title">Personal Memories</h2>
+    <p class="section-subtitle">Moments from conferences, field trips, and adventures — newest first.</p>
+    <div id="memories-container"></div>
+</section>
+
+<!-- ══════════════════════  LIGHTBOX  ══════════════════════ -->
+<div id="lightbox-overlay" class="lightbox-overlay hidden" onclick="closeLightbox()"></div>
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <button class="lightbox-nav prev" onclick="lightboxNav(-1)" aria-label="Previous">&#10094;</button>
+    <img id="lightbox-img" src="" alt="Memory photo">
+    <button class="lightbox-nav next" onclick="lightboxNav(1)" aria-label="Next">&#10095;</button>
+    <div id="lightbox-caption"></div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════
+//  PUBLICATIONS DATA
+//  ─ Add new papers by pushing a new object into this array.
+//  ─ Place a thumbnail image at the path set in `image`.
+//  ─ Supported venueClass values:
+//      venue-cvpr | venue-wacv | venue-3dv | venue-iccv | venue-eccv
+// ════════════════════════════════════════════════════════════
+const papersData = [
+    {
+        id: "gfm-3dv-2026",
+        title: "GfM: Generalizable Monocular Metric Depth Estimation via Ground-Field-based Scale Prior",
+        authors: "Gasser Elazab et al.",
+        venue: "3DV 2026",
+        venueFull: "International Conference on 3D Vision, 2026",
+        venueClass: "venue-3dv",
+        image: "docs/gfm_p2/thumbnail.png",
+        links: [
+            { label: "arXiv",        url: "https://arxiv.org/abs/2512.04303", icon: "📄" },
+            { label: "PDF",          url: "https://arxiv.org/pdf/2512.04303", icon: "📑" },
+            { label: "Proceedings",  url: "",                                  icon: "🔗" }  // Fill in when available
+        ],
+        abstract: "Ground-relative metric depth estimation for autonomous driving using a novel ground-field-based scale prior and self-supervised learning on large-scale driving datasets."
+    },
+    {
+        id: "monopp-wacv-2025",
+        title: "MonoPP: Metric-Scaled Self-Supervised Monocular Depth Estimation by Planar Parallax",
+        authors: "Gasser Elazab et al.",
+        venue: "WACV 2025",
+        venueFull: "IEEE/CVF Winter Conference on Applications of Computer Vision, 2025",
+        venueClass: "venue-wacv",
+        image: "docs/monopp_p1/thumbnail.png",
+        links: [
+            { label: "Project Page", url: "https://mono-pp.github.io/", icon: "🌐" },
+            { label: "arXiv",        url: "",                            icon: "📄" },  // Fill in
+            { label: "Proceedings",  url: "",                            icon: "🔗" }   // Fill in
+        ],
+        abstract: "Metric-scaled self-supervised monocular depth estimation leveraging planar parallax geometry to recover real-world scale without LiDAR or stereo supervision."
+    },
+
+    // ── ADD NEW PAPERS BELOW (copy this block and fill in) ──────────────
+    // {
+    //     id: "paper-id",
+    //     title: "Full Paper Title",
+    //     authors: "Author 1, Author 2, ...",
+    //     venue: "CVPR 2025",
+    //     venueFull: "IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2025",
+    //     venueClass: "venue-cvpr",
+    //     image: "docs/<your-folder>/thumbnail.png",
+    //     links: [
+    //         { label: "arXiv",        url: "https://arxiv.org/abs/XXXX.XXXXX", icon: "📄" },
+    //         { label: "Project Page", url: "https://your-page.github.io",      icon: "🌐" },
+    //         { label: "Code",         url: "https://github.com/...",            icon: "💻" },
+    //         { label: "Proceedings",  url: "https://openaccess.thecvf.com/...",icon: "🔗" },
+    //     ],
+    //     abstract: "One-to-two sentence description of the paper."
+    // },
+];
+
+// ════════════════════════════════════════════════════════════
+//  MEMORIES DATA  (keep newest → oldest)
+//  ─ Images live at:  docs/images/<id>/<filename>
+//  ─ Add filenames to the `images` array as you upload them.
+//  ─ Supported image formats: .jpg, .jpeg, .png, .webp
+// ════════════════════════════════════════════════════════════
+const memoriesData = [
+    {
+        id: "vancouver-2026",
+        title: "Vancouver, Canada",
+        subtitle: "3DV Conference · 2026",
+        folder: "docs/images/vancouver-2026",
+        images: [
+            // Add filenames as you upload photos to docs/images/vancouver-2026/
+            // Example: "1.jpg", "2.jpg", "3.jpg"
+        ]
+    },
+    {
+        id: "nardo-2025",
+        title: "Nardo, Italy",
+        subtitle: "Recording Trip · July 2025",
+        folder: "docs/images/nardo-2025",
+        images: []
+    },
+    {
+        id: "wacv-2025",
+        title: "Tucson, Arizona",
+        subtitle: "WACV Conference · Feb. 2025",
+        folder: "docs/images/wacv-2025",
+        images: []
+    },
+    {
+        id: "china-2024",
+        title: "China Trip",
+        subtitle: "October 2024",
+        folder: "docs/images/china-2024",
+        images: []
+    },
+
+    // ── ADD NEW TRIPS HERE (newest at the top of the list) ──────────────
+    // {
+    //     id: "trip-id",                          // also used as folder name suffix
+    //     title: "City, Country",
+    //     subtitle: "Event · Month YYYY",
+    //     folder: "docs/images/trip-id",          // place photos here
+    //     images: ["1.jpg", "2.jpg", "3.jpg"]     // list filenames here
+    // },
+];
+
+// ════════════════════════════════════════════════════════════
+//  RENDERING — Publications
+// ════════════════════════════════════════════════════════════
+function paperImgFallback(imgEl, venue) {
+    const colorMap = { CVPR: '#dc2626', WACV: '#ea580c', '3DV': '#2563eb', ICCV: '#16a34a', ECCV: '#9333ea' };
+    const key   = Object.keys(colorMap).find(k => venue.includes(k)) || 'CONF';
+    const color = colorMap[key] || '#2563eb';
+    const svg   = `<svg xmlns="http://www.w3.org/2000/svg" width="240" height="200">
+        <rect fill="${color}" width="240" height="200"/>
+        <text fill="rgba(255,255,255,0.95)" font-family="Inter,sans-serif" font-size="20" font-weight="700"
+              x="120" y="88" text-anchor="middle">${key}</text>
+        <text fill="rgba(255,255,255,0.6)" font-family="Inter,sans-serif" font-size="11"
+              x="120" y="112" text-anchor="middle">thumbnail not yet added</text>
+    </svg>`;
+    imgEl.src    = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    imgEl.onerror = null;
+}
+
+function renderPapers() {
+    const container = document.getElementById('papers-container');
+    if (!papersData.length) {
+        container.innerHTML = '<p class="empty-note">No publications listed yet.</p>';
+        return;
+    }
+    container.innerHTML = papersData.map(p => `
+        <div class="paper-card" id="paper-${p.id}">
+            <div class="paper-img-wrap">
+                <img src="${p.image}"
+                     alt="Thumbnail – ${p.title}"
+                     onerror="paperImgFallback(this,'${p.venue}')"
+                     loading="lazy">
+                <span class="venue-badge ${p.venueClass}">${p.venue}</span>
+            </div>
+            <div class="paper-content">
+                <h3 class="paper-title">${p.title}</h3>
+                <p class="paper-authors">${p.authors}</p>
+                <p class="paper-venue-full"><em>${p.venueFull}</em></p>
+                <p class="paper-abstract">${p.abstract}</p>
+                <div class="paper-links">
+                    ${p.links.filter(l => l.url).map(l =>
+                        `<a href="${l.url}" target="_blank" rel="noopener" class="pill-link">${l.icon} ${l.label}</a>`
+                    ).join('')}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ════════════════════════════════════════════════════════════
+//  RENDERING — Memories
+// ════════════════════════════════════════════════════════════
+function renderMemories() {
+    const container = document.getElementById('memories-container');
+    if (!memoriesData.length) {
+        container.innerHTML = '<p class="empty-note">No memories listed yet.</p>';
+        return;
+    }
+    container.innerHTML = memoriesData.map(m => {
+        const preview  = m.images.slice(0, 4);
+        const hasExtra = m.images.length > 4;
+        const isEmpty  = m.images.length === 0;
+        const thumbHtml = (imgs, offset) => imgs.map((img, i) =>
+            `<img src="${m.folder}/${img}"
+                  alt="${m.title} – photo ${offset + i + 1}"
+                  class="album-thumb"
+                  onclick="openMemoryLightbox('${m.id}', ${offset + i})"
+                  loading="lazy">`
+        ).join('');
+
+        return `
+        <div class="memory-card" id="memory-${m.id}">
+            <div class="memory-header" onclick="toggleMemory('${m.id}')">
+                <div>
+                    <h3 class="memory-title">${m.title}</h3>
+                    <p class="memory-subtitle">${m.subtitle}</p>
+                </div>
+                <div class="memory-meta">
+                    <span class="photo-count">${isEmpty ? 'coming soon' : m.images.length + ' photos'}</span>
+                    <span class="expand-icon" id="icon-${m.id}">▼</span>
+                </div>
+            </div>
+            <div class="album-body album-collapsed" id="album-${m.id}">
+                ${isEmpty
+                    ? `<p class="album-empty">📷 Photos coming soon — add images to <code>${m.folder}/</code> and list them in memoriesData.</p>`
+                    : `<div class="album-grid preview-grid">${thumbHtml(preview, 0)}</div>`
+                }
+                ${hasExtra ? `
+                    <div id="extra-${m.id}" class="extra-photos hidden">
+                        <div class="album-grid full-grid">${thumbHtml(m.images.slice(4), 4)}</div>
+                    </div>
+                    <button class="see-all-btn" id="seeall-${m.id}"
+                            onclick="event.stopPropagation(); toggleExtra('${m.id}', ${m.images.length})">
+                        See all ${m.images.length} photos ▼
+                    </button>` : ''}
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function toggleMemory(id) {
+    const body          = document.getElementById(`album-${id}`);
+    const icon          = document.getElementById(`icon-${id}`);
+    const isNowCollapsed = body.classList.toggle('album-collapsed');
+    icon.style.transform = isNowCollapsed ? '' : 'rotate(180deg)';
+}
+
+function toggleExtra(id, total) {
+    const extra     = document.getElementById(`extra-${id}`);
+    const btn       = document.getElementById(`seeall-${id}`);
+    const isHidden  = extra.classList.toggle('hidden');
+    btn.textContent = isHidden ? `See all ${total} photos ▼` : 'Show less ▲';
+}
+
+// ════════════════════════════════════════════════════════════
+//  LIGHTBOX
+// ════════════════════════════════════════════════════════════
+let _lb = { images: [], idx: 0, folder: '', title: '' };
+
+function openMemoryLightbox(tripId, idx) {
+    const m = memoriesData.find(x => x.id === tripId);
+    _lb     = { images: m.images, idx, folder: m.folder, title: m.title };
+    _updateLightbox();
+    document.getElementById('lightbox').classList.remove('hidden');
+    document.getElementById('lightbox-overlay').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function _updateLightbox() {
+    document.getElementById('lightbox-img').src =
+        `${_lb.folder}/${_lb.images[_lb.idx]}`;
+    document.getElementById('lightbox-caption').textContent =
+        `${_lb.title}  ·  ${_lb.idx + 1} / ${_lb.images.length}`;
+}
+
+function lightboxNav(dir) {
+    _lb.idx = (_lb.idx + dir + _lb.images.length) % _lb.images.length;
+    _updateLightbox();
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+    document.getElementById('lightbox-overlay').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+    if (document.getElementById('lightbox').classList.contains('hidden')) return;
+    if (e.key === 'ArrowLeft')  lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+    if (e.key === 'Escape')     closeLightbox();
+});
+
+// ════════════════════════════════════════════════════════════
+//  TAB NAVIGATION
+// ════════════════════════════════════════════════════════════
+function switchTab(target) {
+    document.querySelectorAll('.page').forEach(p => {
+        p.classList.toggle('hidden', p.id !== target);
+    });
+    document.querySelectorAll('.nav-tab').forEach(t => {
+        t.classList.toggle('active', t.dataset.target === target);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.nav-tab').forEach(tab =>
+    tab.addEventListener('click', e => { e.preventDefault(); switchTab(tab.dataset.target); })
+);
+
+// ════════════════════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════════════════════
+renderPapers();
+renderMemories();
+</script>
 </body>
 </html>

@@ -35,7 +35,8 @@
 
 <script>
 // ════════════════════════════════════════════════════════════
-//  PAPERS DATA  — add new entries at the top of the array
+//  PAPERS DATA  — add new entries anywhere, auto-sorted newest first
+//  Add a `year` (and optionally `month`) field to control ordering.
 // ════════════════════════════════════════════════════════════
 const papersData = [
     {
@@ -45,6 +46,7 @@ const papersData = [
         venue: "3DV 2026",
         venueFull: "International Conference on 3D Vision, 2026",
         venueClass: "venue-3dv",
+        year: 2026, month: 3,
         image: "docs/paper_images/GfM.png",
         links: [
             { label: "arXiv", url: "https://arxiv.org/abs/2512.04303" },
@@ -54,12 +56,13 @@ const papersData = [
         abstract: "Ground-relative metric depth estimation for autonomous driving using a novel road-field-based scale prior and self-supervised learning on large-scale driving datasets."
     },
     {
-        id: "card-cvpr-2025",
+        id: "card-cvpr-2026",
         title: "CARD: A Multi-Modal Automotive Dataset for Dense 3D Reconstruction in Challenging Road Topography",
         authors: "First Author",
         venue: "CVPR 2026",
         venueFull: "IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2026",
         venueClass: "venue-cvpr",
+        year: 2026, month: 6,
         image: "docs/paper_images/CARD_image.png",
         links: [
             { label: "Proceedings", url: "" }
@@ -73,6 +76,7 @@ const papersData = [
         venue: "WACV 2025",
         venueFull: "IEEE/CVF Winter Conference on Applications of Computer Vision, 2025",
         venueClass: "venue-wacv",
+        year: 2025, month: 1,
         image: "docs/paper_images/monopp.png",
         links: [
             { label: "Project Page", url: "https://mono-pp.github.io/" },
@@ -81,8 +85,8 @@ const papersData = [
         ],
         abstract: "Metric-scaled self-supervised monocular depth estimation leveraging planar parallax geometry to recover real-world scale without LiDAR or stereo supervision."
     },
-    // Add new papers here (newest first)
-    // { id, title, authors, venue, venueFull, venueClass, image, links: [{label,url},...], abstract }
+    // ── Add new papers above this line ──────────────────────────
+    // { id, title, authors, venue, venueFull, venueClass, year, month, image, links, abstract }
 ];
 
 function paperImgFallback(imgEl, venue) {
@@ -101,7 +105,11 @@ function paperImgFallback(imgEl, venue) {
 function renderPapers() {
     const container = document.getElementById('papers-container');
     if (!papersData.length) return;
-    container.innerHTML = papersData.map(p => `
+    // Auto-sort: newest year first, then newest month first
+    const sorted = [...papersData].sort((a, b) =>
+        b.year !== a.year ? b.year - a.year : (b.month || 0) - (a.month || 0)
+    );
+    container.innerHTML = sorted.map(p => `
         <div class="paper-card">
             <div class="paper-img-wrap">
                 <img src="${p.image}"

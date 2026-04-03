@@ -35,7 +35,7 @@
 
     <div class="timeline">
 
-        <div class="tl-item">
+        <div class="tl-item" data-sort="202301">
             <div class="tl-marker"></div>
             <div class="tl-content">
                 <div class="tl-header">
@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <div class="tl-item">
+        <div class="tl-item" data-sort="202202">
             <div class="tl-marker"></div>
             <div class="tl-content">
                 <div class="tl-header">
@@ -76,7 +76,7 @@
             </div>
         </div>
 
-        <div class="tl-item">
+        <div class="tl-item" data-sort="202108">
             <div class="tl-marker"></div>
             <div class="tl-content">
                 <div class="tl-header">
@@ -92,7 +92,7 @@
             </div>
         </div>
 
-        <div class="tl-item">
+        <div class="tl-item" data-sort="202102">
             <div class="tl-marker"></div>
             <div class="tl-content">
                 <div class="tl-header">
@@ -111,6 +111,15 @@
 
     </div>
 </section>
+
+<script>
+// Auto-sort timeline items newest first by data-sort="YYYYMM"
+document.querySelectorAll('.timeline').forEach(tl => {
+    const items = [...tl.querySelectorAll(':scope > .tl-item')];
+    items.sort((a, b) => (b.dataset.sort || '0').localeCompare(a.dataset.sort || '0'));
+    items.forEach(item => tl.appendChild(item));
+});
+</script>
 
 </body>
 </html>

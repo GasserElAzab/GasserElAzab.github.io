@@ -29,8 +29,85 @@
 <!-- ══════════════════════  CERTIFICATIONS  ══════════════════════ -->
 <section id="certifications" class="page">
     <h2 class="page-title">Certifications</h2>
-    <p class="page-sub">Awards, reviewing, certificates, and extracurricular activities — coming soon.</p>
+    <p class="page-sub">Courses, summer schools, and certificates — automatically sorted newest first.</p>
+    <div id="certs-container" class="cert-grid"></div>
 </section>
 
+<script>
+// ════════════════════════════════════════════════════════════
+//  CERTIFICATIONS DATA
+//  Add new entries anywhere — they are auto-sorted newest first.
+//  Fields:
+//    id          – unique slug
+//    title       – certificate / programme title
+//    issuer      – issuing organisation
+//    date        – human-readable date shown on the card
+//    year, month – used for auto-sort (month 1–12)
+//    category    – label shown as a pill (e.g. "Nanodegree", "Summer School")
+//    color       – hex color for the accent bar and category pill
+//    description – short description (optional, can be "")
+//    pdf         – path to PDF, or "" if not available yet
+// ════════════════════════════════════════════════════════════
+const certsData = [
+    {
+        id: "udacity-data-analysis-2021",
+        title: "Data Analysis Nanodegree",
+        issuer: "Udacity",
+        date: "August 2021",
+        year: 2021,
+        month: 8,
+        category: "Nanodegree",
+        color: "#02b3e4",
+        description: "Comprehensive programme covering data wrangling, exploratory data analysis, data visualisation, and Python for data science.",
+        pdf: "docs/certifications/DataAnalysis_nanodegree.pdf"
+    },
+    {
+        id: "eit-summer-school-helsinki-2021",
+        title: "Digital Platforms for Smart Cities",
+        issuer: "EIT Digital Summer School — Aalto University, Helsinki",
+        date: "August 2021",
+        year: 2021,
+        month: 8,
+        category: "Summer School",
+        color: "#0ea5e9",
+        description: "Intensive summer school on digital platform strategies and smart-city applications, hosted at Aalto University in Helsinki, Finland.",
+        pdf: "docs/certifications/EIT_SummerSchool_Helsinki_2021.pdf"
+    },
+    // ── Add new certifications above this line ──────────────────
+    // { id, title, issuer, date, year, month, category, color, description, pdf }
+];
+
+function renderCerts() {
+    // Sort newest first (year desc, then month desc)
+    const sorted = [...certsData].sort((a, b) =>
+        b.year !== a.year ? b.year - a.year : b.month - a.month
+    );
+
+    const container = document.getElementById('certs-container');
+    if (!sorted.length) {
+        container.innerHTML = '<p class="empty-note">No certifications added yet.</p>';
+        return;
+    }
+
+    container.innerHTML = sorted.map(c => `
+        <div class="cert-card">
+            <div class="cert-card-bar" style="background:${c.color}"></div>
+            <div class="cert-card-body">
+                <span class="cert-category" style="background:${c.color}">${c.category}</span>
+                <h3 class="cert-title">${c.title}</h3>
+                <span class="cert-issuer">${c.issuer}</span>
+                <span class="cert-date">${c.date}</span>
+                ${c.description ? `<p class="cert-desc">${c.description}</p>` : ''}
+            </div>
+            ${c.pdf ? `
+            <div class="cert-footer">
+                <a href="${c.pdf}" target="_blank" rel="noopener" class="pill-link">View Certificate ↗</a>
+            </div>` : ''}
+        </div>
+    `).join('');
+}
+
+renderCerts();
+</script>
 </body>
 </html>

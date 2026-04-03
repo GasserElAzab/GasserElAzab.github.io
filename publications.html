@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications – Gasser Elazab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ══════════════════════  NAVBAR  ══════════════════════ -->
+<nav class="top-nav">
+    <div class="nav-inner">
+        <span class="nav-brand">Gasser Elazab</span>
+        <ul class="nav-list">
+            <li><a href="index.html"           class="nav-tab">Home</a></li>
+            <li><a href="publications.html"    class="nav-tab active">Publications</a></li>
+            <li><a href="experience.html"      class="nav-tab">Experience</a></li>
+            <li><a href="education.html"       class="nav-tab">Education</a></li>
+            <li><a href="certifications.html"  class="nav-tab">Certifications</a></li>
+            <li><a href="memories.html"        class="nav-tab">Memories</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ══════════════════════  PUBLICATIONS  ══════════════════════ -->
+<section id="publications" class="page">
+    <h2 class="page-title">Publications</h2>
+    <p class="page-sub">Research in monocular depth estimation, 3D scene reconstruction, and autonomous driving perception.</p>
+    <div id="papers-container" style="margin-top:1.5rem"></div>
+</section>
+
+<script>
+// ════════════════════════════════════════════════════════════
+//  PAPERS DATA  — add new entries at the top of the array
+// ════════════════════════════════════════════════════════════
+const papersData = [
+    {
+        id: "gfm-3dv-2026",
+        title: "GfM: Road-Relative, Metric, Self-Supervised Monocular Geometry for Vehicular Applications",
+        authors: "Gasser Elazab et al.",
+        venue: "3DV 2026",
+        venueFull: "International Conference on 3D Vision, 2026",
+        venueClass: "venue-3dv",
+        image: "docs/paper_images/GfM.png",
+        links: [
+            { label: "arXiv", url: "https://arxiv.org/abs/2512.04303" },
+            { label: "PDF",   url: "https://arxiv.org/pdf/2512.04303" },
+            { label: "Proceedings", url: "" }
+        ],
+        abstract: "Ground-relative metric depth estimation for autonomous driving using a novel road-field-based scale prior and self-supervised learning on large-scale driving datasets."
+    },
+    {
+        id: "card-cvpr-2025",
+        title: "CARD: A Multi-Modal Automotive Dataset for Dense 3D Reconstruction in Challenging Road Topography",
+        authors: "First Author",
+        venue: "CVPR 2026",
+        venueFull: "IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2026",
+        venueClass: "venue-cvpr",
+        image: "docs/paper_images/CARD_image.png",
+        links: [
+            { label: "Proceedings", url: "" }
+        ],
+        abstract: "Category-aware representation for semantic scene flow estimation in autonomous driving, enabling richer motion understanding across object classes."
+    },
+    {
+        id: "monopp-wacv-2025",
+        title: "MonoPP: Metric-Scaled Self-Supervised Monocular Depth Estimation by Planar-Parallax Geometry in Automotive Applications",
+        authors: "Gasser Elazab et al.",
+        venue: "WACV 2025",
+        venueFull: "IEEE/CVF Winter Conference on Applications of Computer Vision, 2025",
+        venueClass: "venue-wacv",
+        image: "docs/paper_images/monopp.png",
+        links: [
+            { label: "Project Page", url: "https://mono-pp.github.io/" },
+            { label: "arXiv",        url: "" },
+            { label: "Proceedings",  url: "" }
+        ],
+        abstract: "Metric-scaled self-supervised monocular depth estimation leveraging planar parallax geometry to recover real-world scale without LiDAR or stereo supervision."
+    },
+    // Add new papers here (newest first)
+    // { id, title, authors, venue, venueFull, venueClass, image, links: [{label,url},...], abstract }
+];
+
+function paperImgFallback(imgEl, venue) {
+    const colorMap = { CVPR: '#dc2626', WACV: '#ea580c', '3DV': '#2563eb', ICCV: '#16a34a', ECCV: '#9333ea' };
+    const key   = Object.keys(colorMap).find(k => venue.includes(k)) || 'CONF';
+    const color = colorMap[key] || '#2563eb';
+    const svg   = `<svg xmlns="http://www.w3.org/2000/svg" width="220" height="160">
+        <rect fill="${color}" width="220" height="160"/>
+        <text fill="rgba(255,255,255,0.9)" font-family="Inter,sans-serif" font-size="18" font-weight="700"
+              x="110" y="86" text-anchor="middle">${key}</text>
+    </svg>`;
+    imgEl.src    = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    imgEl.onerror = null;
+}
+
+function renderPapers() {
+    const container = document.getElementById('papers-container');
+    if (!papersData.length) return;
+    container.innerHTML = papersData.map(p => `
+        <div class="paper-card">
+            <div class="paper-img-wrap">
+                <img src="${p.image}"
+                     alt="${p.title}"
+                     onerror="paperImgFallback(this,'${p.venue}')"
+                     loading="lazy">
+                <span class="venue-badge ${p.venueClass}">${p.venue}</span>
+            </div>
+            <div class="paper-content">
+                <h3 class="paper-title">${p.title}</h3>
+                <p class="paper-authors">${p.authors}</p>
+                <p class="paper-venue-full">${p.venueFull}</p>
+                <p class="paper-abstract">${p.abstract}</p>
+                <div class="paper-links">
+                    ${p.links.filter(l => l.url).map(l =>
+                        `<a href="${l.url}" target="_blank" rel="noopener" class="pill-link">${l.label}</a>`
+                    ).join('')}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+renderPapers();
+</script>
+</body>
+</html>

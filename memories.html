@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories – Gasser Elazab</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ══════════════════════  NAVBAR  ══════════════════════ -->
+<nav class="top-nav">
+    <div class="nav-inner">
+        <span class="nav-brand">Gasser Elazab</span>
+        <ul class="nav-list">
+            <li><a href="index.html"           class="nav-tab">Home</a></li>
+            <li><a href="publications.html"    class="nav-tab">Publications</a></li>
+            <li><a href="experience.html"      class="nav-tab">Experience</a></li>
+            <li><a href="education.html"       class="nav-tab">Education</a></li>
+            <li><a href="certifications.html"  class="nav-tab">Certifications</a></li>
+            <li><a href="memories.html"        class="nav-tab active">Memories</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- ══════════════════════  MEMORIES  ══════════════════════ -->
+<section id="memories" class="page">
+    <h2 class="page-title">Memories</h2>
+    <p class="page-sub">Conferences, field trips, and adventures.</p>
+    <div id="memories-container" style="margin-top:1.5rem"></div>
+</section>
+
+<!-- ══════════════════════  LIGHTBOX  ══════════════════════ -->
+<div id="lightbox-overlay" class="lightbox-overlay hidden" onclick="closeLightbox()"></div>
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-label="Image viewer">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&#x2715;</button>
+    <button class="lightbox-nav prev" onclick="lightboxNav(-1)" aria-label="Previous">&#10094;</button>
+    <img id="lightbox-img" src="" alt="Memory photo">
+    <button class="lightbox-nav next" onclick="lightboxNav(1)" aria-label="Next">&#10095;</button>
+    <div id="lightbox-caption"></div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════
+//  MEMORIES DATA  — add new trips at the top of the array
+// ════════════════════════════════════════════════════════════
+const memoriesData = [
+    {
+        id: "vancouver-2026",
+        title: "Vancouver, Canada",
+        subtitle: "3DV Conference · 2026",
+        folder: "docs/images/vancouver-2026",
+        images: []
+    },
+    {
+        id: "nardo-2025",
+        title: "Nardo, Italy",
+        subtitle: "Recording Trip · July 2025",
+        folder: "docs/images/nardo-2025",
+        images: []
+    },
+    {
+        id: "wacv-2025",
+        title: "Tucson, Arizona",
+        subtitle: "WACV Conference · Feb. 2025",
+        folder: "docs/images/wacv-2025",
+        images: []
+    },
+    {
+        id: "china-2024",
+        title: "China Trip",
+        subtitle: "October 2024",
+        folder: "docs/images/china-2024",
+        images: []
+    },
+    // Add new trips here (newest first)
+    // { id, title, subtitle, folder: "docs/images/<id>", images: ["1.jpg", ...] }
+];
+
+// Gradient palettes for empty trip placeholders
+const tripGradients = [
+    'linear-gradient(135deg,#667eea,#764ba2)',
+    'linear-gradient(135deg,#f7971e,#ffd200)',
+    'linear-gradient(135deg,#11998e,#38ef7d)',
+    'linear-gradient(135deg,#ee0979,#ff6a00)',
+    'linear-gradient(135deg,#4568dc,#b06ab3)',
+    'linear-gradient(135deg,#134e5e,#71b280)',
+];
+
+function renderMemories() {
+    const container = document.getElementById('memories-container');
+    if (!memoriesData.length) return;
+    container.innerHTML = memoriesData.map((m, mi) => {
+        const total    = m.images.length;
+        const preview  = m.images.slice(0, 3);
+        const hasMore  = total > 3;
+        const grad     = tripGradients[mi % tripGradients.length];
+
+        const coverHtml = total > 0
+            ? `<img class="trip-cover-img" src="${m.folder}/${m.images[0]}" alt="${m.title}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+               <div class="trip-cover-placeholder" style="background:${grad};display:none"></div>`
+            : `<div class="trip-cover-placeholder" style="background:${grad}"></div>`;
+
+        const previewStrip = total > 0 ? `
+            <div class="trip-preview-strip">
+                ${preview.map((img, i) => `
+                    <img src="${m.folder}/${img}" alt="${m.title} ${i+1}"
+                         class="strip-thumb" loading="lazy"
+                         onclick="openMemoryLightbox('${m.id}',${i})">`).join('')}
+                ${hasMore ? `<button class="strip-more-btn" onclick="toggleTripGallery('${m.id}')">
+                    +${total - 3}<br><span>more</span>
+                </button>` : ''}
+            </div>` : '';
+
+        const fullGrid = hasMore ? `
+            <div class="trip-full-grid hidden" id="grid-${m.id}">
+                ${m.images.slice(3).map((img, i) => `
+                    <img src="${m.folder}/${img}" alt="${m.title} ${i+4}"
+                         class="grid-thumb" loading="lazy"
+                         onclick="openMemoryLightbox('${m.id}',${i+3})">`).join('')}
+                <button class="collapse-btn" onclick="toggleTripGallery('${m.id}')">Show less</button>
+            </div>` : '';
+
+        return `
+        <div class="trip-card" id="trip-${m.id}">
+            <div class="trip-cover">
+                ${coverHtml}
+                <div class="trip-cover-overlay">
+                    <div class="trip-cover-text">
+                        <span class="trip-subtitle">${m.subtitle}</span>
+                        <h2 class="trip-title">${m.title}</h2>
+                    </div>
+                    ${total > 0 ? `<span class="trip-photo-count">${total} photos</span>` : ''}
+                </div>
+            </div>
+            ${previewStrip}
+            ${fullGrid}
+        </div>`;
+    }).join('');
+}
+
+function toggleTripGallery(id) {
+    const grid = document.getElementById(`grid-${id}`);
+    grid.classList.toggle('hidden');
+}
+
+// ════════════════════════════════════════════════════════════
+//  LIGHTBOX
+// ════════════════════════════════════════════════════════════
+let _lb = { images: [], idx: 0, folder: '', title: '' };
+
+function openMemoryLightbox(tripId, idx) {
+    const m = memoriesData.find(x => x.id === tripId);
+    _lb     = { images: m.images, idx, folder: m.folder, title: m.title };
+    _updateLightbox();
+    document.getElementById('lightbox').classList.remove('hidden');
+    document.getElementById('lightbox-overlay').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function _updateLightbox() {
+    document.getElementById('lightbox-img').src =
+        `${_lb.folder}/${_lb.images[_lb.idx]}`;
+    document.getElementById('lightbox-caption').textContent =
+        `${_lb.title}  ·  ${_lb.idx + 1} / ${_lb.images.length}`;
+}
+
+function lightboxNav(dir) {
+    _lb.idx = (_lb.idx + dir + _lb.images.length) % _lb.images.length;
+    _updateLightbox();
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.add('hidden');
+    document.getElementById('lightbox-overlay').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+    if (document.getElementById('lightbox').classList.contains('hidden')) return;
+    if (e.key === 'ArrowLeft')  lightboxNav(-1);
+    if (e.key === 'ArrowRight') lightboxNav(1);
+    if (e.key === 'Escape')     closeLightbox();
+});
+
+renderMemories();
+</script>
+</body>
+</html>
